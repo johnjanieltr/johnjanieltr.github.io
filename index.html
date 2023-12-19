@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Porta of @johnjanieltr" />
+    <meta
+      name="keywords"
+      content="johnjanieltr, portfolio, portafolio, developer, programmer, desarrollador, programador"
+    />
+    <link rel="canonical" href="https://johnjanieltr.github.io/" />
+    <meta property="og:title" content="John Janiel Tr | Home" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://johnjanieltr.github.io/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@johnjanieltr" />
+    <meta name="twitter:title" content="John Janiel Tr | Home" />
+    <meta name="twitter:description" content="Web portfolio of @johnjanieltr" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>John Janiel Tr | Portafolio</title>
+  </head>
+  <body id="body">
+    <header class="header" id="header">
+      <h2 class="header__title" id="header-title">JohnJanielTr</h2>
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-menu__ul">
+          <li class="nav-menu__li hidden">
+            <a href="#professionals-projects" class="nav-menu__a"
+              >Profesional</a
+            >
+          </li>
+          <li class="nav-menu__li">
+            <a href="#personal-projects" class="nav-menu__a">Personal</a>
+          </li>
+          <li class="nav-menu__li">
+            <a href="#about-me" class="nav-menu__a">Sobre mi</a>
+          </li>
+        </ul>
+      </nav>
+      <span class="menu-btn" id="menu-btn">
+        <img
+          class="menu-btn__icon"
+          src="./assets/icons/menu.svg"
+          alt="menu-icon"
+        />
+      </span>
+    </header>
+    <main id="main">
+      <section class="hero-section" id="hero-section">
+        <div class="hero-section__div">
+          <h1 class="hero-section__title">John Janiel Tr</h1>
+          <p class="hero-section__p">Desarrollador web frontend</p>
+          <div class="hero-section__icons">
+            <a
+              href="https://github.com/johnjanieltr"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="./assets/icons/github-light.svg"
+                alt="Github"
+                class="hero-section__icons-img"
+              />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/john-janiel-troya-508a37176/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="./assets/icons/linkedin.svg"
+                alt="Linkedin"
+                class="hero-section__icons-img"
+              />
+            </a>
+            <a
+              href="https://twitter.com/johnjanieltr"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="./assets/icons/x-twitter.svg"
+                alt="Twitter"
+                class="hero-section__icons-img"
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- arreglar esas clases y usar nth child -->
+      <div class="sections-wrapper">
+        <section class="sections hidden" id="professionals-projects">
+          <h2 class="sections__title">Proyectos Profesionales</h2>
+          <div class="cards-container">
+            <article class="card">
+              <div class="card__img-contain">
+                <img src=""" alt="" class="card__img" id="" />
+              </div>
+              <div class="card__info-contain">
+                <h3 class="card__title">card title</h3>
+                <p class="card__date">card date (november - now)</p>
+                <p class="card__description">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  alias impedit, saepe pariatur quidem tempore deleniti fugit
+                  quos at hic temporibus molestias distinctio.
+                </p>
+              </div>
+              <button class="btn">
+                <span class="btn__span">Ir al sitio</span>
+                <img
+                  src="./assets/icons/arrow-right.svg"
+                  alt="arrow-right"
+                  class="btn__icon"
+                />
+              </button>
+            </article>
+          </div>
+        </section>
+        <section class="sections" id="personal-projects">
+          <h2 class="sections__title">Proyectos Personales</h2>
+          <div class="cards-small-container" id="cards-small-container">
+            <!-- js print cards-small here -->
+          </div>
+        </section>
+        <section class="sections" id="about-me">
+          <h2 class="sections__title">Sobre mi</h2>
+          <p class="sections__description">
+            Hola, soy John Janiel Troya, desarrollador web frontend. Actualmente
+            estudiando la carrera de ingeniería en informática en la Universidad
+            Politécnica Territorial del Estado Aragua
+            <span class="italic">"Federico Brito Figueroa".</span>
+            <span></span>
+          </p>
+          <p class="sections__description">
+            Lenguajes y tecnologias dominadas:
+          </p>
+          <div class="list-icons">
+            <img
+              src="./assets/icons/html5.webp"
+              alt="html5"
+              class="list-icons__img"
+            />
+            <img
+              src="./assets/icons/css.webp"
+              alt="css3"
+              class="list-icons__img"
+            />
+            <img
+              src="./assets/icons/javascript.webp"
+              alt="JavaScript"
+              class="list-icons__img u-t-scale-0-85"
+            />
+            <img
+              src="./assets/icons/sass.webp"
+              alt="sass"
+              class="list-icons__img list-icons__img--sass u-t-scale-1-1"
+            />
+          </div>
+          <span class="cv">
+            <a href="./johnjanieltr-cv.pdf" target="_blank" class="cv__link"
+              >Ver Curriculum</a
+            >
+          </span>
+        </section>
+      </div>
+    </main>
+    <div class="modal-container hidden" id="modal-container">
+      <div class="modal" id="modal">
+        <h2 class="modal__title" id="modal-title"></h2>
+        <div class="modal__opts">
+          <div class="opt">
+            <a
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              id="pp-github-link"
+            >
+              <img
+                src="./assets/icons/github-dark.svg"
+                alt="arrow-right"
+                class="opt__icon"
+              />
+            </a>
+            <a
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              id="pp-github-link2"
+            >
+              <span class="opt__label">Ver en Github</span>
+            </a>
+          </div>
+          <div class="opt">
+            <a
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              id="pp-project-link"
+            >
+              <img
+                src="./assets/icons/arrow-right.svg"
+                alt="arrow-right"
+                class="opt__icon"
+              />
+            </a>
+            <a
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              id="pp-project-link2"
+            >
+              <span class="opt__label">Ver proyecto</span>
+            </a>
+          </div>
+          <div class="close-btn">
+            <img
+              src="./assets/icons/x-lg.svg"
+              alt="close-btn"
+              class="close-btn__icon"
+            />
+            <span class="close-btn__span">esc</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>
