@@ -1,0 +1,40 @@
+.small-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  row-gap: 3.2rem;
+  column-gap: clamp(1rem, 0.5077rem + 2.4615vw, 2rem);
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.small-card {
+  position: relative;
+  min-width: 10rem;
+  background-color: var(--card-bg-color);
+  text-align: center;
+}
+
+.small-card__img-contain {
+  max-height: 175px;
+  margin-bottom: 0.5rem;
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+.small-card__img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
+}
+
+.small-card__img:hover {
+  transform: scale(1.05);
+}
+
+.small-card__title {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  font-size: var(--step--1);
+  text-transform: capitalize;
+}
