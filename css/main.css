@@ -148,7 +148,7 @@ body::-webkit-scrollbar-thumb {
 
 .header {
   position: fixed;
-  bottom: 0;
+  bottom: -1px;
   z-index: 990;
   display: flex;
   justify-content: space-between;
@@ -227,14 +227,16 @@ body::-webkit-scrollbar-thumb {
 
 .hero-section {
   position: relative;
-  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 65vh;
   margin-bottom: 2.5rem;
   background-color: var(--hero-section-bg-color);
 }
 
 .hero-section__div {
   position: relative;
-  top: 15%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -421,6 +423,7 @@ body::-webkit-scrollbar-thumb {
 .opt__label {
   font-size: var(--step--2);
   cursor: pointer;
+  user-select: none;
 }
 
 .list-icons {
@@ -453,6 +456,11 @@ body::-webkit-scrollbar-thumb {
 .list-icons__img--sass {
   margin-left: 0.8rem;
   transform: scale(1.25);
+}
+
+.list-icons__img--nodejs {
+  transform: scale(1.5);
+  margin-left: 1.7rem;
 }
 
 .btn {
@@ -517,21 +525,17 @@ body::-webkit-scrollbar-thumb {
 .arrow-down {
   position: absolute;
   right: 0;
-  bottom: 2.5rem;
+  bottom: -1.7rem;
   left: 0;
   width: 43px;
   height: 80px;
   margin: auto;
   opacity: 0;
-  transition: opacity 1s ease;
+  transition: opacity 0.7s ease;
 }
 
 .arrow-down--is-active {
   opacity: 1;
-}
-
-.arrow-down--mobile {
-  bottom: 4.9rem;
 }
 
 .arrow-down path {
@@ -583,9 +587,11 @@ body::-webkit-scrollbar-thumb {
     padding: 0.5rem 0.8rem 0.5rem;
     overflow: hidden;
   }
+
   .menu-btn {
     display: none;
   }
+
   .nav-menu {
     position: relative;
     top: 0;
@@ -600,12 +606,14 @@ body::-webkit-scrollbar-thumb {
     visibility: visible;
     opacity: 1;
   }
+
   .nav-menu__ul {
     width: 100%;
     justify-content: right;
   }
-  .section {
-    scroll-margin-top: 2.5rem;
+
+  .sections {
+    scroll-margin-top: 4rem;
   }
 }
 
@@ -617,6 +625,7 @@ body::-webkit-scrollbar-thumb {
     grid-template-columns: 45% 55%;
     height: clamp(225px, 35vh, 260px);
   }
+
   .card__info-contain {
     display: flex;
     flex-direction: column;
@@ -629,6 +638,7 @@ body::-webkit-scrollbar-thumb {
     grid-template-columns: 35% 65%;
     height: clamp(225px, 35vh, 260px);
   }
+
   .card__info-contain {
     display: flex;
     flex-direction: column;

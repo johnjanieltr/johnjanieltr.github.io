@@ -10,13 +10,21 @@ export const personalProjects = [
     description: "Aplicación de lista de tareas simple",
     technologies: ["html", "sass", "javascript"],
   },
-
   {
     id: 2,
     title: "Manage landing page",
     imgSrc: "./assets/images/manage.png",
     githubLink: "https://github.com/johnjanieltr/manage-landing-page",
     projectLink: "https://johnjanieltr.github.io/manage-landing-page",
+    description: "Solución a desafío de código de Frontend Mentor",
+    technologies: ["html", "css", "javascript"],
+  },
+  {
+    id: 3,
+    title: "Rock, Paper, Scissors",
+    imgSrc: "./assets/images/rock-paper-scissors-game.png",
+    githubLink: "https://github.com/johnjanieltr/rock-paper-scissors-game",
+    projectLink: "https://johnjanieltr.github.io/rock-paper-scissors-game",
     description: "Solución a desafío de código de Frontend Mentor",
     technologies: ["html", "css", "javascript"],
   },
