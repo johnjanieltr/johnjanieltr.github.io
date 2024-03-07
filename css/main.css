@@ -299,56 +299,6 @@ body::-webkit-scrollbar-thumb {
   font-size: var(--step--1);
 }
 
-.cards-container {
-  display: grid;
-  justify-content: space-around;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.card {
-  position: relative;
-  display: grid;
-  gap: 1em;
-  min-width: 250px;
-  width: 100%;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  background-color: var(--card-bg-color);
-  border-radius: 1rem;
-}
-
-.card__img-contain {
-  width: 100%;
-  background-color: #fff;
-  border-radius: inherit;
-  overflow: hidden;
-}
-
-.card__img {
-  height: 100%;
-  transform: scale(1.1);
-}
-
-.card__info-contain {
-  width: 100%;
-}
-
-.card__title {
-  margin-bottom: 0.5em;
-  font-size: var(--step-0);
-  text-transform: capitalize;
-}
-
-.card__date {
-  margin-bottom: 1em;
-}
-
-.card__description {
-  margin-bottom: 0.7em;
-  font-size: var(--step--1);
-}
-
 .u-italic {
   font-style: italic;
 }

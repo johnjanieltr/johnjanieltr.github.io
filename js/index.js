@@ -1,8 +1,8 @@
-import { activeArrowDown, disableArrowDown } from "./ArrowDown.js";
-import { changeColorHeader } from "./Header.js";
-import { toggleModal } from "./Modal.js";
-import { toggleNavMenu } from "./NavMenu.js";
-import { printCardsSmall } from "./SmallCards.js";
+import { activeArrowDown, disableArrowDown } from "./Components/ArrowDown.js";
+import { changeColorHeader } from "./Components/Header.js";
+import { toggleModal } from "./Components/Modal.js";
+import { toggleNavMenu } from "./Components/NavMenu.js";
+import { printCardsSmall } from "./Components/SmallCards.js";
 import { searchDataset } from "./searchDataset.js";
 
 const $navMenu = document.getElementById("nav-menu");
