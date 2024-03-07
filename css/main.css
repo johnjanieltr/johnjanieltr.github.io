@@ -382,6 +382,7 @@ body::-webkit-scrollbar-thumb {
   flex-flow: row wrap;
   gap: 0.3rem;
   width: 100%;
+  row-gap: 1.6rem;
 }
 
 .list-icons--hero {
