@@ -13,6 +13,7 @@
   min-width: 10rem;
   background-color: var(--card-bg-color);
   text-align: center;
+  cursor: pointer;
 }
 
 .small-card__img-contain {
@@ -37,4 +38,8 @@
   margin-bottom: 2rem;
   font-size: var(--step--1);
   text-transform: capitalize;
+}
+
+.small-card:hover .btn__icon {
+  left: 5px;
 }

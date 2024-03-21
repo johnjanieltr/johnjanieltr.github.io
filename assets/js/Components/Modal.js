@@ -39,3 +39,5 @@ export const toggleModal = (id) => {
     }, 310);
   }
 };
+
+export default toggleModal;

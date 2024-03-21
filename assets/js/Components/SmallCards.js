@@ -35,6 +35,7 @@ export const printCardsSmall = () => {
   personalProjects.forEach((el) => {
     const $article = document.createElement("article");
     $article.classList.add("small-card");
+    $article.setAttribute("data-id", el.id);
     $article.innerHTML = `
       <div class="small-card__img-contain">
         <img
@@ -46,7 +47,7 @@ export const printCardsSmall = () => {
       <footer class="small-card__footer">
         <h3 class="small-card__title">${el.title}</h3>
       </footer>
-      <button type="button" class="btn btn--small-card" data-id="${el.id}">
+      <button type="button" class="btn btn--small-card">
         <span class="btn__span">Más info</span>
         <img src="./assets/icons/arrow-right.svg"
         alt="arrow-right"

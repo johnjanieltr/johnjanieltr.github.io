@@ -1,9 +1,9 @@
 import { activeArrowDown, disableArrowDown } from "./Components/ArrowDown.js";
-import { changeColorHeader } from "./Components/Header.js";
-import { toggleModal } from "./Components/Modal.js";
-import { toggleNavMenu } from "./Components/NavMenu.js";
+import changeColorHeader from "./Components/Header.js";
+import toggleModal from "./Components/Modal.js";
+import toggleNavMenu from "./Components/NavMenu.js";
 import { printCardsSmall } from "./Components/SmallCards.js";
-import { searchDataset } from "./searchDataset.js";
+import searchDataset from "./searchDataset.js";
 
 const $navMenu = document.getElementById("nav-menu");
 
@@ -27,10 +27,7 @@ document.addEventListener("click", (e) => {
     toggleNavMenu();
   if (e.target.matches(".nav-menu__li") || e.target.matches(".nav-menu__li *"))
     toggleNavMenu();
-  if (
-    e.target.matches(".btn--small-card") ||
-    e.target.matches(".btn--small-card *")
-  ) {
+  if (e.target.matches(".small-card") || e.target.matches(".small-card *")) {
     toggleModal(searchDataset(e.target).id);
   }
   if (

@@ -27,8 +27,8 @@
       href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/main.css" />
-    <link rel="stylesheet" href="./css/small-cards.css" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/small-cards.css" />
     <title>John Janiel Tr | Portafolio</title>
   </head>
   <body id="body">
@@ -102,7 +102,7 @@
           </button>
         </div>
         <svg class="arrow-down hidden" id="arrow-down">
-          <path stroke-linecap="round" class="a1" d="M0 0 L20 22 L40 0"></path>
+          <path stroke-linecap="round" d="M0 0 L20 22 L40 0"></path>
         </svg>
       </section>
       <div class="sections-wrapper">
@@ -165,19 +165,21 @@
         <div class="modal__opts">
           <div class="opt">
             <a
-              href="#"
+              href=""
               target="_blank"
               rel="noopener noreferrer"
               id="pp-github-link"
             >
-              <img
-                src="./assets/icons/github-dark.svg"
-                alt="arrow right"
-                class="opt__icon"
-              />
+              <div class="opt__icon-contain">
+                <img
+                  src="./assets/icons/github-dark.svg"
+                  alt="arrow right"
+                  class="opt__icon"
+                />
+              </div>
             </a>
             <a
-              href="#"
+              href=""
               target="_blank"
               rel="noopener noreferrer"
               id="pp-github-link2"
@@ -192,11 +194,13 @@
               rel="noopener noreferrer"
               id="pp-project-link"
             >
-              <img
-                src="./assets/icons/arrow-right.svg"
-                alt="arrow right"
-                class="opt__icon"
-              />
+              <div class="opt__icon-contain">
+                <img
+                  src="./assets/icons/arrow-right.svg"
+                  alt="arrow right"
+                  class="opt__icon"
+                />
+              </div>
             </a>
             <a
               href=""
@@ -210,6 +214,6 @@
         </div>
       </div>
     </div>
-    <script type="module" src="./js/index.js"></script>
+    <script type="module" src="./assets/js/index.js"></script>
   </body>
 </html>

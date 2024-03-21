@@ -348,10 +348,10 @@ body::-webkit-scrollbar-thumb {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  width: 100%;
+  justify-content: space-around;
   max-width: 255px;
-  margin: 1.5rem auto 0;
+  width: 100%;
+  margin: 1.7rem auto 0;
 }
 
 .opt {
@@ -360,7 +360,12 @@ body::-webkit-scrollbar-thumb {
   align-items: center;
 }
 
-.opt__icon {
+.opt:hover .opt__icon {
+  top: -0.1rem;
+}
+
+.opt__icon-contain {
+  position: relative;
   width: clamp(3.5rem, 3.0077rem + 2.4615vw, 4.5rem);
   padding: clamp(1rem, 0.9015rem + 0.4923vw, 1.2rem);
   margin-bottom: 0.5rem;
@@ -368,6 +373,12 @@ body::-webkit-scrollbar-thumb {
   background-color: var(--main-text-color);
   border-radius: 50%;
   cursor: pointer;
+}
+
+.opt__icon {
+  position: relative;
+  top: 0;
+  transition: top 0.3s ease;
 }
 
 .opt__label {

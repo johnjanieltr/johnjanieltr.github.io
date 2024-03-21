@@ -1,6 +1,6 @@
 const $header = document.getElementById("header");
 
-export const changeColorHeader = (display) => {
+const changeColorHeader = (display) => {
   if (display === "mobile") {
     window.scrollY > 17
       ? $header.classList.add("header--change-color")
@@ -14,3 +14,5 @@ export const changeColorHeader = (display) => {
       : $header.classList.remove("header--change-color");
   }
 };
+
+export default changeColorHeader;
