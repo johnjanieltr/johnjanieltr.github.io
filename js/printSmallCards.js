@@ -11,7 +11,7 @@ const printSmallCards = () => {
     $article.classList.add("small-card");
     $article.setAttribute("data-id", el.id);
     $article.innerHTML = `
-      <div class="small-card__img-contain">
+      <div class="small-card__img-container">
         <img
           class="small-card__img"
           alt="${el.title}"
