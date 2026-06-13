@@ -124,6 +124,7 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   justify-content: flex-end;
   max-width: 1700px;
+  visibility: hidden;
 }
 
 .nav-menu {
@@ -376,6 +377,7 @@ body::-webkit-scrollbar-thumb {
 }
 .small-card {
   position: relative;
+  max-width: 22rem;
   min-width: 10rem;
   background-color: var(--blue-color-2);
   text-align: center;
