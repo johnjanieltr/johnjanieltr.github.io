@@ -170,6 +170,7 @@ body::-webkit-scrollbar-thumb {
 .hero-section__title {
   position: relative;
   font-size: clamp(2.5em, 9vw, 5em);
+  margin-bottom: 0.25rem;
 }
 .hero-section__p {
   font-size: clamp(1.1em, 3.5vw, 2em);
@@ -377,7 +378,7 @@ body::-webkit-scrollbar-thumb {
 }
 .small-card {
   position: relative;
-  max-width: 22rem;
+  max-width: 21rem;
   min-width: 10rem;
   background-color: var(--blue-color-2);
   text-align: center;
@@ -409,9 +410,9 @@ body::-webkit-scrollbar-thumb {
 .arrow-down {
   position: absolute;
   right: 0;
-  bottom: -1.7rem;
+  bottom: -2.6rem;
   left: 0;
-  width: 43px;
+  width: 45px;
   height: 80px;
   margin: auto;
   opacity: 0;

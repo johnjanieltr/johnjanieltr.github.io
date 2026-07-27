@@ -3,7 +3,7 @@ import searchDataset from "./searchDataset.js";
 import { activeArrowDown, disableArrowDown } from "./toggleArrowDown.js";
 import toggleModal from "./toggleModal.js";
 
-document.addEventListener("DOMContentLoaded", printSmallCards);
+// document.addEventListener("DOMContentLoaded", printSmallCards);
 
 document.addEventListener("scroll", () => {
   window.scrollY < 115 ? activeArrowDown() : disableArrowDown();
