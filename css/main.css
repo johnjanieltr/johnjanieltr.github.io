@@ -189,6 +189,11 @@ body::-webkit-scrollbar-thumb {
   height: auto;
   object-fit: contain;
   object-position: center center;
+  opacity: 1;
+  transition: opacity ease 250ms;
+}
+.hero-section__icons-img:hover {
+  opacity: 0.8;
 }
 
 .sections-wrapper {
