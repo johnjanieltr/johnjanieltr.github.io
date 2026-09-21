@@ -173,7 +173,7 @@ body::-webkit-scrollbar-thumb {
   margin-bottom: 0.25rem;
 }
 .hero-section__p {
-  font-size: clamp(1.1em, 3.5vw, 2em);
+  font-size: clamp(1.1em, 3.5vw, 1.8em);
   margin-bottom: 0.5em;
 }
 .hero-section__icons {
@@ -333,7 +333,7 @@ body::-webkit-scrollbar-thumb {
   outline: 0;
   transition: opacity 300ms ease;
 }
-.btn--small-card {
+.btn--card {
   position: absolute;
   right: 0;
   bottom: -0.9rem;
@@ -355,7 +355,7 @@ body::-webkit-scrollbar-thumb {
   cursor: pointer;
   opacity: 0.8;
 }
-.btn--small-card:hover {
+.btn--card:hover {
   opacity: 1;
 }
 .btn__text {
@@ -372,43 +372,47 @@ body::-webkit-scrollbar-thumb {
   left: 5px;
 }
 
-.small-cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  row-gap: 3.2rem;
-  column-gap: clamp(1rem, 0.5077rem + 2.4615vw, 2rem);
+.cards-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 2.5rem;
   width: 95%;
   margin-left: auto;
   margin-right: auto;
 }
-.small-card {
+.card {
   position: relative;
-  max-width: 21rem;
+  max-width: 19rem;
   min-width: 10rem;
   background-color: var(--blue-color-2);
   text-align: center;
   cursor: pointer;
 }
-.small-card__img-container {
+#projects-cards .card {
+  max-width: 15rem;
+  min-height: auto;
+}
+.card__img-container {
   aspect-ratio: 16/8;
   margin-bottom: 0.5rem;
   border-radius: inherit;
   overflow: hidden;
 }
-.small-card__img {
+.card__img {
   width: 100%;
   height: 100%;
   transition: transform 500ms ease;
 }
-.small-card__img:hover {
+.card:hover .card__img {
   transform: scale(1.05);
 }
-.small-card__title {
+.card__title {
   margin-top: 1rem;
   margin-bottom: 2rem;
   font-size: var(--step--1);
 }
-.small-card:hover .btn__icon {
+.card:hover .btn__icon {
   left: 5px;
 }
 
@@ -475,10 +479,6 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media (min-width: 576px) {
-  .card {
-    grid-template-columns: 45% 55%;
-    height: clamp(225px, 35vh, 260px);
-  }
   .card__info-contain {
     display: flex;
     flex-direction: column;
@@ -489,15 +489,5 @@ body::-webkit-scrollbar-thumb {
 @media (min-width: 768px) {
   .hero-section__p {
     margin-top: -0.5rem;
-  }
-
-  .card {
-    grid-template-columns: 35% 65%;
-    height: clamp(225px, 35vh, 260px);
-  }
-  .card__info-contain {
-    display: flex;
-    flex-direction: column;
-    padding: 1rem 3rem 1rem 0;
   }
 }

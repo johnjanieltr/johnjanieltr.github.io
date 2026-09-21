@@ -1,4 +1,4 @@
-import { personalProjects } from "./projects.js";
+import { personalProjects } from "./cardsInfo.js";
 
 const $body = document.body,
   $header = document.getElementById("header"),
