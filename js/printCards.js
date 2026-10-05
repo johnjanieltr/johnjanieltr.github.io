@@ -1,77 +1,38 @@
 import { experience, personalProjects } from "./cardsInfo.js";
+import { ICONS, renderTags } from "./templates.js";
 
+const MAX_TAGS = 4;
 
 const printCards = () => {
-  printExperienceCards();
-  printProjectsCards();
+  renderCards(experience, "experience-cards", { featured: true });
+  renderCards(personalProjects, "projects-cards");
 };
 
-const printExperienceCards = () => {
-  const $experienceCards = document.getElementById("experience-cards");
+// featured: card horizontal que muestra todas las tecnologías
+const renderCards = (items, containerId, { featured = false } = {}) => {
+  const $container = document.getElementById(containerId);
   const fragment = document.createDocumentFragment();
-  const info = experience.reverse();
 
-  info.forEach((el) => {
+  items.forEach((el) => {
     const $article = document.createElement("article");
-    $article.classList.add("card");
-    // $article.setAttribute("data-id", el.id);
+    $article.className = featured ? "card card--featured" : "card";
+    $article.dataset.id = el.id;
     $article.innerHTML = `
-      <div class="card__img-container">
-        <img
-          class="card__img"
-          alt="${el.title}"
-          src="${el.imgSrc}"
-        />
+      <div class="card__media">
+        <img class="card__img" alt="${el.title}" src="${el.imgSrc}" loading="lazy" />
       </div>
-      <footer class="card__footer">
+      <div class="card__body">
         <h3 class="card__title">${el.title}</h3>
-      </footer>
-      <!-- <button type="button" class="btn btn--card">
-        <span class="btn__text">Más info</span>
-        <img
-          src="./assets/icons/arrow-right.svg"
-          alt="arrow-right"
-          class="btn__icon"
-        />
-      </button> -->
+        ${el.role ? `<p class="card__role">${el.role}</p>` : ""}
+        ${renderTags(el.technologies, featured ? Infinity : MAX_TAGS)}
+        <button type="button" class="card__cta" aria-haspopup="dialog">
+          Ver detalles ${ICONS.arrowRight}
+        </button>
+      </div>
     `;
     fragment.appendChild($article);
   });
-  $experienceCards.appendChild(fragment);
-};
-
-const printProjectsCards = () => {
-  const $projectsCards = document.getElementById("projects-cards");
-  const fragment = document.createDocumentFragment();
-  const info = personalProjects.reverse();
-
-  info.forEach((el) => {
-    const $article = document.createElement("article");
-    $article.classList.add("card");
-    // $article.setAttribute("data-id", el.id);
-    $article.innerHTML = `
-      <div class="card__img-container">
-        <img
-          class="card__img"
-          alt="${el.title}"
-          src="${el.imgSrc}"
-        />
-      </div>
-      <footer class="card__footer">
-        <h3 class="card__title">${el.title}</h3>
-      </footer>
-      <!-- <button type="button" class="btn btn--card">
-        <span class="btn__text">Más info</span>
-        <img
-          src="./assets/icons/arrow-right.svg"
-          alt="arrow-right"
-          class="btn__icon"
-        />
-      </button> -->
-    `;
-    fragment.appendChild($article);
-  });
-  $projectsCards.appendChild(fragment);
+  $container.appendChild(fragment);
 };
 
 export default printCards;
