@@ -400,6 +400,37 @@ button {
   color: var(--text-muted);
 }
 
+/* CONTACT
+ */
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(2rem, 1.5rem + 2.5vw, 3.5rem) var(--gutter);
+  text-align: center;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+.contact__email {
+  margin-top: 1.25rem;
+  font-size: var(--step-2);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  overflow-wrap: anywhere;
+  transition: color 200ms ease;
+}
+.contact__email:hover {
+  color: var(--accent-hover);
+}
+.contact__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
 /* FOOTER
  */
 .footer {

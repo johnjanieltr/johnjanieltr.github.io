@@ -17,12 +17,13 @@ export const experience = [
   {
     id: "exp-kalstein",
     title: "Kalstein Instruments C.A.",
-    role: "Desarrollador Full Stack y de automatizaciones con IA",
-    imgSrc: "./assets/images/kalstein-instruments.png",
+    role: "Desarrollador Full Stack y de Automatizaciones con IA",
+    imgSrc: "./assets/images/kalstein-instruments.webp",
     highlights: [
       "Trabajo en equipo de IT dando mantenimiento, mejoras y añadiendo nuevas funcionalidades a varias páginas usando WordPress, PHP, MySQL, JavaScript.",
       "Desarrollo de más de 8 automatizaciones usando N8N, ChatGPT, Google Sheets y la API de WordPress.",
       "Traducción de sitios completos de WordPress con IA.",
+      "Migración de sitios de WordPress.",
       "Diseño de interfaces.",
       "Aplicación de estrategias SEO On-page, Off-page y técnico.",
     ],
@@ -82,7 +83,7 @@ export const personalProjects = [
   {
     id: "proj-password-generator",
     title: "Secure password generator",
-    imgSrc: "./assets/images/secure-password-generator.png",
+    imgSrc: "./assets/images/secure-password-generator.webp",
     highlights: [],
     technologies: ["JavaScript", "Web Crypto API", "Claude Code"],
     links: {
@@ -94,7 +95,7 @@ export const personalProjects = [
   {
     id: "proj-todo-app",
     title: "Todo app",
-    imgSrc: "./assets/images/todo-app.png",
+    imgSrc: "./assets/images/todo-app.webp",
     highlights: ["Solución a desafío de código de Frontend Mentor."],
     technologies: ["HTML", "CSS", "JavaScript"],
     links: {
@@ -106,7 +107,7 @@ export const personalProjects = [
   {
     id: "proj-rock-paper-scissors",
     title: "Rock, paper, scissors",
-    imgSrc: "./assets/images/rock-paper-scissors.png",
+    imgSrc: "./assets/images/rock-paper-scissors.webp",
     highlights: ["Solución a desafío de código de Frontend Mentor."],
     technologies: ["HTML", "CSS", "JavaScript"],
     links: {
@@ -118,7 +119,7 @@ export const personalProjects = [
   {
     id: "proj-manage-landing",
     title: "Manage landing page",
-    imgSrc: "./assets/images/manage-landing-page.png",
+    imgSrc: "./assets/images/manage-landing-page.webp",
     highlights: ["Solución a desafío de código de Frontend Mentor."],
     technologies: ["HTML", "CSS", "JavaScript"],
     links: {
