@@ -516,6 +516,7 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top; /* las capturas de sitios se leen desde el header */
 }
 .modal__body {
   display: flex;
@@ -642,6 +643,74 @@ button {
 }
 .automation:hover .automation__cta .icon {
   transform: translateX(3px);
+}
+
+/* PREVIEW (prototipo de diseño previo al desarrollo)
+ */
+.preview {
+  padding-top: 0.5rem;
+}
+.preview__card {
+  display: block;
+  overflow: hidden;
+  background-color: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: border-color 200ms ease;
+}
+.preview__card:hover {
+  border-color: var(--border-strong);
+}
+.preview__media {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background-color: #f2f2f2; /* mismo fondo que la captura del prototipo */
+  border-bottom: 1px solid var(--border);
+}
+.preview__media img {
+  width: 100%;
+  aspect-ratio: 1600 / 590;
+  object-fit: cover;
+  transition: transform 400ms var(--ease);
+}
+.preview__card:hover .preview__media img {
+  transform: scale(1.02);
+}
+.preview__badge {
+  position: absolute;
+  top: 0.6rem;
+  left: 0.6rem;
+  padding: 0.2rem 0.55rem;
+  font-size: var(--step--2);
+  font-weight: 500;
+  color: #fff;
+  background-color: var(--accent);
+  border-radius: 999px;
+}
+.preview__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.75rem 0.9rem 0.85rem;
+}
+.preview__title {
+  font-size: var(--step--1);
+  font-weight: 600;
+}
+.preview__description {
+  font-size: var(--step--2);
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+.preview__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.3rem;
+  font-size: var(--step--2);
+  font-weight: 500;
+  color: var(--accent);
 }
 
 /* VIEWER (capturas a pantalla completa, encima del modal)

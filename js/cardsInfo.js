@@ -3,6 +3,7 @@
 // screenshots: [{ src, alt }] — vacío = el modal no muestra carrusel.
 // automations (opcional): [{ title, description, thumb, images: [{ src, alt, label }] }]
 //   Se listan en el modal; cada una abre sus capturas en el visor a pantalla completa.
+// preview (opcional): { url, image, title, description } — enlace al prototipo de diseño previo al desarrollo.
 
 const KALSTEIN_IMG = "./assets/images/exp-kalstein";
 
@@ -80,6 +81,31 @@ export const experience = [
 ];
 
 export const personalProjects = [
+  {
+    id: "proj-oral-dent",
+    title: "Oral Dent - Clínica dental estética",
+    imgSrc: "./assets/images/oral-dent.webp",
+    highlights: [
+      "Diseño del mockup con Claude Design.",
+      "Diseño de un preview interactivo cercano al resultado final ideal para mostrar a un cliente.",
+      "Maquetación y desarrollo de la Landing Page usando Novamira MCP y Claude Code.",
+      "Deploy usando FTP y hosting gratuito.",
+      "Formulario funcional con WPForms.",
+    ],
+    technologies: ["WordPress", "WPForms", "Claude Code", "Novamira MCP"],
+    links: {
+      live: "https://oraldent.freedev.app/",
+      repo: null,
+    },
+    screenshots: [],
+    preview: {
+      url: "https://claude.ai/artifact/TVg4T13xFC3h4fGCWyKjJd",
+      image: "./assets/images/proj-oral-dent/preview.webp",
+      title: "Prototipo interactivo en Claude Design",
+      description:
+        "Antes de desarrollar en WordPress, el cliente revisa y aprueba la landing en laptop, tablet y móvil.",
+    },
+  },
   {
     id: "proj-password-generator",
     title: "Secure password generator",

@@ -66,6 +66,27 @@ const renderAutomations = (automations = []) => {
   `;
 };
 
+// Prototipo previo al desarrollo (p. ej. un artefacto de Claude Design) que el cliente puede abrir.
+const renderPreview = (preview) => {
+  if (!preview) return "";
+  return `
+    <section class="preview">
+      <h3 class="modal__subtitle">Mockup para cliente</h3>
+      <a href="${preview.url}" target="_blank" rel="noopener noreferrer" class="preview__card">
+        <span class="preview__media">
+          <img src="${preview.image}" alt="" loading="lazy" />
+          <span class="preview__badge">Interactivo</span>
+        </span>
+        <span class="preview__info">
+          <span class="preview__title">${preview.title}</span>
+          <span class="preview__description">${preview.description}</span>
+          <span class="preview__cta">Abrir preview ${ICONS.external}</span>
+        </span>
+      </a>
+    </section>
+  `;
+};
+
 // Arriba: carrusel si hay screenshots; si no, la imagen de la card como portada.
 // Con automatizaciones no se muestra portada (el logo ya está en la card y así el modal es más corto).
 const renderMedia = (item) => {
@@ -94,6 +115,7 @@ const renderModal = (item) => {
       }
       ${renderTags(item.technologies)}
       ${renderAutomations(item.automations)}
+      ${renderPreview(item.preview)}
       ${renderLinks(item.links)}
     </div>
   </div>
