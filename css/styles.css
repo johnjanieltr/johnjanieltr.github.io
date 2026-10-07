@@ -152,6 +152,41 @@ button {
 .nav__link:hover {
   color: var(--text);
 }
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* LANG SWITCH (ES | EN)
+ */
+.lang-switch {
+  display: flex;
+  height: 2.25rem;
+  padding: 3px;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+}
+.lang-switch__btn {
+  padding-inline: 0.6rem;
+  font-size: var(--step--2);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--text-muted);
+  border-radius: 999px;
+  transition: color 200ms ease, background-color 200ms ease;
+}
+.lang-switch__btn:hover {
+  color: var(--text);
+}
+.lang-switch__btn[aria-pressed="true"] {
+  color: #fff;
+  background-color: var(--accent);
+}
+/* Oculta la página mientras i18n.js la traduce al inglés (ver script inline del <head>) */
+.i18n-pending body {
+  visibility: hidden;
+}
 
 /* BUTTONS
  */

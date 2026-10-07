@@ -1,18 +1,19 @@
 import { ICONS } from "./templates.js";
+import { t, tr } from "./i18n.js";
 
 // El desplazamiento usa scroll-snap, así que el swipe en móvil es nativo.
 export const renderCarousel = (screenshots) => {
   const multiple = screenshots.length > 1;
 
   return `
-    <div class="carousel" aria-roledescription="carrusel" aria-label="Capturas">
+    <div class="carousel" aria-roledescription="${t("carousel.roledesc")}" aria-label="${t("carousel.label")}">
       <div class="carousel__track">
         ${screenshots
           .map(
             (s, i) => `
-          <figure class="carousel__slide" aria-label="${i + 1} de ${screenshots.length}">
-            <img src="${s.src}" alt="${s.alt}" loading="lazy" />
-            ${s.label ? `<figcaption class="carousel__label">${s.label}</figcaption>` : ""}
+          <figure class="carousel__slide" aria-label="${t("carousel.position", { i: i + 1, total: screenshots.length })}">
+            <img src="${s.src}" alt="${tr(s.alt)}" loading="lazy" />
+            ${s.label ? `<figcaption class="carousel__label">${tr(s.label)}</figcaption>` : ""}
           </figure>`
           )
           .join("")}
@@ -20,13 +21,13 @@ export const renderCarousel = (screenshots) => {
       ${
         multiple
           ? `
-        <button type="button" class="carousel__arrow carousel__arrow--prev" aria-label="Anterior">${ICONS.chevronLeft}</button>
-        <button type="button" class="carousel__arrow carousel__arrow--next" aria-label="Siguiente">${ICONS.chevronRight}</button>
+        <button type="button" class="carousel__arrow carousel__arrow--prev" aria-label="${t("carousel.prev")}">${ICONS.chevronLeft}</button>
+        <button type="button" class="carousel__arrow carousel__arrow--next" aria-label="${t("carousel.next")}">${ICONS.chevronRight}</button>
         <div class="carousel__dots">
           ${screenshots
             .map(
               (_, i) =>
-                `<button type="button" class="carousel__dot" aria-label="Ir a la captura ${i + 1}"></button>`
+                `<button type="button" class="carousel__dot" aria-label="${t("carousel.goTo", { n: i + 1 })}"></button>`
             )
             .join("")}
         </div>`

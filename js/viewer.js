@@ -1,5 +1,6 @@
 import { ICONS } from "./templates.js";
 import { renderCarousel, initCarousel } from "./carousel.js";
+import { t, tr } from "./i18n.js";
 
 // Visor a pantalla completa para las capturas de una automatización.
 // Se abre encima del modal y al cerrarse devuelve el foco a la fila que lo abrió.
@@ -19,13 +20,13 @@ export const isViewerOpen = () => isOpen;
 const render = ({ title, description, images }) => `
   <div class="viewer__panel" role="dialog" aria-modal="true" aria-labelledby="viewer-title">
     <header class="viewer__header">
-      <h3 class="viewer__title" id="viewer-title">${title}</h3>
-      <button type="button" class="modal__close viewer__close" aria-label="Cerrar visor" data-close-viewer>
+      <h3 class="viewer__title" id="viewer-title">${tr(title)}</h3>
+      <button type="button" class="modal__close viewer__close" aria-label="${t("viewer.close")}" data-close-viewer>
         ${ICONS.close}
       </button>
     </header>
     ${renderCarousel(images)}
-    ${description ? `<p class="viewer__description">${description}</p>` : ""}
+    ${description ? `<p class="viewer__description">${tr(description)}</p>` : ""}
   </div>
 `;
 

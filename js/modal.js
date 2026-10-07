@@ -2,6 +2,7 @@ import { findItem } from "./cardsInfo.js";
 import { ICONS, renderTags } from "./templates.js";
 import { renderCarousel, initCarousel } from "./carousel.js";
 import { openViewer, isViewerOpen } from "./viewer.js";
+import { t, tr } from "./i18n.js";
 
 const $body = document.body,
   $modalContainer = document.getElementById("modal-container");
@@ -21,7 +22,7 @@ const renderLinks = ({ live, repo }) => {
       ${
         live
           ? `<a href="${live}" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
-              Ver proyecto ${ICONS.external}
+              ${t("modal.live")} ${ICONS.external}
             </a>`
           : ""
       }
@@ -29,7 +30,7 @@ const renderLinks = ({ live, repo }) => {
         repo
           ? `<a href="${repo}" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">
               <img src="./assets/icons/github-light.svg" alt="" class="btn__img" />
-              Ver repositorio
+              ${t("modal.repo")}
             </a>`
           : ""
       }
@@ -41,7 +42,7 @@ const renderAutomations = (automations = []) => {
   if (!automations.length) return "";
   return `
     <section class="automations">
-      <h3 class="modal__subtitle">Automatizaciones</h3>
+      <h3 class="modal__subtitle">${t("modal.automations")}</h3>
       <ul class="automations__list">
         ${automations
           .map(
@@ -50,11 +51,11 @@ const renderAutomations = (automations = []) => {
             <button type="button" class="automation" data-automation="${i}" aria-haspopup="dialog">
               <img class="automation__thumb" src="${a.thumb}" alt="" loading="lazy" />
               <span class="automation__info">
-                <span class="automation__title">${a.title}</span>
-                <span class="automation__description">${a.description}</span>
+                <span class="automation__title">${tr(a.title)}</span>
+                <span class="automation__description">${tr(a.description)}</span>
                 <span class="automation__meta">
-                  ${a.images.length} ${a.images.length === 1 ? "captura" : "capturas"}
-                  <span class="automation__cta">Ver ${ICONS.arrowRight}</span>
+                  ${t(a.images.length === 1 ? "modal.shotsOne" : "modal.shotsOther", { n: a.images.length })}
+                  <span class="automation__cta">${t("modal.view")} ${ICONS.arrowRight}</span>
                 </span>
               </span>
             </button>
@@ -71,16 +72,16 @@ const renderPreview = (preview) => {
   if (!preview) return "";
   return `
     <section class="preview">
-      <h3 class="modal__subtitle">Mockup para cliente</h3>
+      <h3 class="modal__subtitle">${t("modal.mockup")}</h3>
       <a href="${preview.url}" target="_blank" rel="noopener noreferrer" class="preview__card">
         <span class="preview__media">
           <img src="${preview.image}" alt="" loading="lazy" />
-          <span class="preview__badge">Interactivo</span>
+          <span class="preview__badge">${t("modal.interactive")}</span>
         </span>
         <span class="preview__info">
-          <span class="preview__title">${preview.title}</span>
-          <span class="preview__description">${preview.description}</span>
-          <span class="preview__cta">Abrir preview ${ICONS.external}</span>
+          <span class="preview__title">${tr(preview.title)}</span>
+          <span class="preview__description">${tr(preview.description)}</span>
+          <span class="preview__cta">${t("modal.openPreview")} ${ICONS.external}</span>
         </span>
       </a>
     </section>
@@ -92,25 +93,26 @@ const renderPreview = (preview) => {
 const renderMedia = (item) => {
   if (item.screenshots.length) return renderCarousel(item.screenshots);
   if (item.automations?.length) return "";
-  return `<div class="modal__cover"><img src="${item.imgSrc}" alt="${item.title}" /></div>`;
+  return `<div class="modal__cover"><img src="${item.imgSrc}" alt="${tr(item.title)}" /></div>`;
 };
 
 const renderModal = (item) => {
   const media = renderMedia(item);
+  const highlights = tr(item.highlights);
   return `
   <div class="modal ${media ? "" : "modal--no-media"}" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <button type="button" class="modal__close" aria-label="Cerrar" data-close>
+    <button type="button" class="modal__close" aria-label="${t("modal.close")}" data-close>
       ${ICONS.close}
     </button>
     ${media}
     <div class="modal__body">
       <header>
-        <h2 class="modal__title" id="modal-title">${item.title}</h2>
-        ${item.role ? `<p class="modal__role">${item.role}</p>` : ""}
+        <h2 class="modal__title" id="modal-title">${tr(item.title)}</h2>
+        ${item.role ? `<p class="modal__role">${tr(item.role)}</p>` : ""}
       </header>
       ${
-        item.highlights.length
-          ? `<ul class="modal__highlights">${item.highlights.map((h) => `<li>${h}</li>`).join("")}</ul>`
+        highlights.length
+          ? `<ul class="modal__highlights">${highlights.map((h) => `<li>${h}</li>`).join("")}</ul>`
           : ""
       }
       ${renderTags(item.technologies)}

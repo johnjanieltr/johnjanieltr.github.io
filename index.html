@@ -32,49 +32,75 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/styles.css" />
+    <script>
+      // Si el sitio se va a mostrar en inglés, lo oculta hasta que js/i18n.js lo traduzca (evita ver el español un instante).
+      // Mismo criterio que i18n.js: ?lang= → última elección guardada → idioma del navegador.
+      (function () {
+        var lang = new URLSearchParams(location.search).get("lang");
+        try {
+          if (lang !== "es" && lang !== "en") lang = localStorage.getItem("lang");
+        } catch (e) {}
+        if (lang !== "es" && lang !== "en") lang = /^en/i.test(navigator.language) ? "en" : "es";
+        if (lang === "en") {
+          var root = document.documentElement;
+          root.lang = "en";
+          root.classList.add("i18n-pending");
+          setTimeout(function () { root.classList.remove("i18n-pending"); }, 3000);
+        }
+      })();
+    </script>
     <title>John Janiel Troya | Portafolio</title>
   </head>
   <body>
     <header class="header" id="header">
       <div class="header__inner container">
         <a href="#top" class="header__logo">John Janiel Troya</a>
-        <nav class="nav" aria-label="Principal">
+        <nav class="nav" aria-label="Principal" data-i18n-aria="nav.label">
           <ul class="nav__list">
-            <li><a href="#experience" class="nav__link">Experiencia</a></li>
-            <li><a href="#projects" class="nav__link">Proyectos</a></li>
-            <li><a href="#about-me" class="nav__link">Sobre mí</a></li>
-            <li><a href="#contact" class="nav__link">Contacto</a></li>
+            <li><a href="#experience" class="nav__link" data-i18n="nav.experience">Experiencia</a></li>
+            <li><a href="#projects" class="nav__link" data-i18n="nav.projects">Proyectos</a></li>
+            <li><a href="#about-me" class="nav__link" data-i18n="nav.about">Sobre mí</a></li>
+            <li><a href="#contact" class="nav__link" data-i18n="nav.contact">Contacto</a></li>
           </ul>
-          <a
-            href="./assets/john-janiel-troya-cv.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn--sm btn--secondary"
-          >
-            CV
-          </a>
+          <div class="nav__actions">
+            <a
+              href="./assets/john-janiel-troya-cv.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn--sm btn--secondary"
+              data-cv
+            >
+              CV
+            </a>
+            <div class="lang-switch" role="group" aria-label="Idioma" data-i18n-aria="lang.label">
+              <button type="button" class="lang-switch__btn" data-lang="es" aria-pressed="true">ES</button>
+              <button type="button" class="lang-switch__btn" data-lang="en" aria-pressed="false">EN</button>
+            </div>
+          </div>
         </nav>
       </div>
     </header>
     <main id="main">
       <section class="hero container" id="top">
-        <p class="hero__eyebrow">Hola, soy</p>
+        <p class="hero__eyebrow" data-i18n="hero.greeting">Hola, soy</p>
         <h1 class="hero__title">John Janiel Troya</h1>
         <p class="hero__role">
-          Desarrollador Web Full Stack <span class="hero__role-sep">·</span>
-          Automatizaciones con IA
+          <span data-i18n="hero.role">Desarrollador Web Full Stack</span> <span class="hero__role-sep">·</span>
+          <span data-i18n="hero.roleAI">Automatizaciones con IA</span>
         </p>
         <div class="hero__actions">
           <a href="#projects" class="btn btn--primary">
-            Ver proyectos
+            <span data-i18n="hero.projects">Ver proyectos</span>
             <svg class="icon" viewBox="0 -960 960 960" aria-hidden="true"><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/></svg>
           </a>
-          <a href="#contact" class="btn btn--secondary">Contactar</a>
+          <a href="#contact" class="btn btn--secondary" data-i18n="hero.contact">Contactar</a>
           <a
             href="./assets/john-janiel-troya-cv.pdf"
             target="_blank"
             rel="noopener noreferrer"
             class="btn btn--secondary"
+            data-cv
+            data-i18n="hero.cv"
           >
             Ver curriculum
           </a>
@@ -103,26 +129,26 @@
 
       <section class="section container" id="experience">
         <header class="section__header">
-          <h2 class="section__title">Experiencia</h2>
+          <h2 class="section__title" data-i18n="experience.title">Experiencia</h2>
         </header>
         <div class="cards cards--experience" id="experience-cards"></div>
       </section>
 
       <section class="section container" id="projects">
         <header class="section__header">
-          <h2 class="section__title">Proyectos y prácticas</h2>
+          <h2 class="section__title" data-i18n="projects.title">Proyectos y prácticas</h2>
         </header>
         <div class="cards" id="projects-cards"></div>
       </section>
 
       <section class="section container" id="about-me">
         <header class="section__header">
-          <h2 class="section__title">Sobre mí</h2>
-          <p class="section__subtitle">
+          <h2 class="section__title" data-i18n="about.title">Sobre mí</h2>
+          <p class="section__subtitle" data-i18n="about.subtitle">
             Desarrollador Web Full Stack y desarrollador de automatizaciones con IA.
           </p>
         </header>
-        <h3 class="section__label">Tecnologías que manejo</h3>
+        <h3 class="section__label" data-i18n="about.stack">Tecnologías que manejo</h3>
         <div class="stack">
             <div class="stack__item">
               <svg
@@ -375,19 +401,19 @@
 
       <section class="section container" id="contact">
         <div class="contact">
-          <h2 class="section__title">Contacto</h2>
-          <p class="section__subtitle">
+          <h2 class="section__title" data-i18n="contact.title">Contacto</h2>
+          <p class="section__subtitle" data-i18n="contact.subtitle">
             ¿Tienes una oportunidad o un proyecto en mente? Escríbeme.
           </p>
           <a href="mailto:troyajohn17@gmail.com" class="contact__email">troyajohn17@gmail.com</a>
           <div class="contact__actions">
             <a href="mailto:troyajohn17@gmail.com" class="btn btn--primary">
               <svg class="icon" viewBox="0 -960 960 960" aria-hidden="true"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg>
-              Enviar correo
+              <span data-i18n="contact.send">Enviar correo</span>
             </a>
             <button type="button" class="btn btn--secondary" data-copy="troyajohn17@gmail.com">
               <svg class="icon" viewBox="0 -960 960 960" aria-hidden="true"><path d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z"/></svg>
-              <span data-copy-label>Copiar correo</span>
+              <span data-copy-label data-i18n="contact.copy">Copiar correo</span>
             </button>
             <a
               href="https://www.linkedin.com/in/johnjanieltr"
@@ -408,7 +434,7 @@
         <div class="footer__links">
           <a href="https://www.linkedin.com/in/johnjanieltr" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a href="https://github.com/johnjanieltr" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="./assets/john-janiel-troya-cv.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+          <a href="./assets/john-janiel-troya-cv.pdf" target="_blank" rel="noopener noreferrer" data-cv>CV</a>
         </div>
       </div>
     </footer>
