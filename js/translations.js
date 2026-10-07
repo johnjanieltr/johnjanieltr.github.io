@@ -7,8 +7,8 @@ export const UI = {
     "meta.title": "John Janiel Troya | Portafolio",
     "meta.description":
       "Portafolio de John Janiel Troya, desarrollador web Full Stack y de automatizaciones con IA: JavaScript, WordPress, Node.js, N8N y Claude Code.",
-    // Cuando exista el CV en inglés, cambiar solo la ruta de "en".
-    cv: "./assets/john-janiel-troya-cv.pdf",
+    // CV que abren los enlaces [data-cv] según el idioma.
+    cv: "./assets/john-troya-cv-desarrollador-fullstack.pdf",
 
     "nav.label": "Principal",
     "nav.experience": "Experiencia",
@@ -27,7 +27,8 @@ export const UI = {
     "experience.title": "Experiencia",
     "projects.title": "Proyectos y prácticas",
     "about.title": "Sobre mí",
-    "about.subtitle": "Desarrollador Web Full Stack y desarrollador de automatizaciones con IA.",
+    "about.subtitle":
+      "Desarrollo sitios y aplicaciones web con JavaScript, React y WordPress, y automatizo procesos con n8n e IA.",
     "about.stack": "Tecnologías que manejo",
 
     "contact.title": "Contacto",
@@ -64,7 +65,7 @@ export const UI = {
     "meta.title": "John Janiel Troya | Portfolio",
     "meta.description":
       "Portfolio of John Janiel Troya, Full Stack web developer and AI automation developer: JavaScript, WordPress, Node.js, N8N and Claude Code.",
-    cv: "./assets/john-janiel-troya-cv.pdf",
+    cv: "./assets/john-troya-resume-fullstack-developer.pdf",
 
     "nav.label": "Main",
     "nav.experience": "Experience",
@@ -83,7 +84,8 @@ export const UI = {
     "experience.title": "Experience",
     "projects.title": "Projects & practice",
     "about.title": "About me",
-    "about.subtitle": "Full Stack Web Developer and AI automation developer.",
+    "about.subtitle":
+      "I build websites and web applications with JavaScript, React and WordPress, and automate processes with n8n and AI.",
     "about.stack": "Technologies I work with",
 
     "contact.title": "Contact",

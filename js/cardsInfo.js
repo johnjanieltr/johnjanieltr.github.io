@@ -197,7 +197,18 @@ export const personalProjects = [
     id: "proj-password-generator",
     title: "Secure password generator",
     imgSrc: "./assets/images/secure-password-generator.webp",
-    highlights: [],
+    highlights: {
+      es: [
+        "Generador de contraseñas que funciona 100% en el navegador con aleatoriedad criptográfica (Web Crypto API).",
+        "Content-Security-Policy estricta, sin cookies ni rastreo, interfaz en 4 idiomas y tema claro/oscuro.",
+        "Desarrollado con Claude Code: definí requisitos y decisiones de diseño y seguridad, y revisé cada cambio.",
+      ],
+      en: [
+        "Password generator that runs 100% in the browser using cryptographic randomness (Web Crypto API).",
+        "Strict Content-Security-Policy, no cookies or tracking, interface in 4 languages and light/dark theme.",
+        "Built with Claude Code: I defined the requirements and the design and security decisions, and reviewed every change.",
+      ],
+    },
     technologies: ["JavaScript", "Web Crypto API", "Claude Code", "TailwindCSS"],
     links: {
       live: "https://secure-password-generator-b96.pages.dev/",
@@ -210,7 +221,7 @@ export const personalProjects = [
     title: "Todo app",
     imgSrc: "./assets/images/todo-app.webp",
     highlights: FRONTEND_MENTOR,
-    technologies: ["ReactJs", "Vite", "JavaScript", "CSS"],
+    technologies: ["ReactJs", "Vite", "JavaScript", "TailwindCSS"],
     links: {
       live: "https://johnjanieltr.github.io/todo-app",
       repo: "https://github.com/johnjanieltr/todo-app",

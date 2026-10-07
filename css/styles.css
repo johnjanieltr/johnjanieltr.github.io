@@ -133,6 +133,7 @@ button {
   font-weight: 600;
   font-size: var(--step--1);
   letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 
 .nav {
@@ -147,6 +148,7 @@ button {
 .nav__link {
   font-size: var(--step--1);
   color: var(--text-muted);
+  white-space: nowrap;
   transition: color 200ms ease;
 }
 .nav__link:hover {
@@ -899,7 +901,8 @@ button {
 
 /* RESPONSIVE
  */
-@media (min-width: 640px) {
+/* Los links del nav solo aparecen cuando caben junto al logo, el CV y la píldora de idioma (~740px en español) */
+@media (min-width: 800px) {
   .nav__list {
     display: flex;
   }
