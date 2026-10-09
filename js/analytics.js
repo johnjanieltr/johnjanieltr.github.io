@@ -6,7 +6,7 @@ import { getLang } from "./i18n.js";
 // En localhost y navegadores automatizados no se envía nada salvo con ?forcetrack=1 (para pruebas).
 
 const ENDPOINT = "https://script.google.com/macros/s/AKfycbzTspkGNWxWCm9qYa2EEgoW29IcTuKHNk_BSIs-UnxXZEm82ELg9QCMfEPscdeTwGco/exec";
-const GEO_URL = "https://ipapi.co/json/";
+const GEO_URL = "https://get.geojs.io/v1/ip/geo.json";
 const GEO_TIMEOUT = 1500;
 
 let enabled = false;
@@ -52,7 +52,8 @@ const shouldTrack = (params) => {
 
 const text = (value) => (typeof value === "string" ? value.slice(0, 100) : "");
 
-// Nunca rechaza: si falla (bloqueador, límite de ipapi, caché corrupta) se envía sin ubicación.
+// Nunca rechaza: si falla (bloqueador, caché corrupta) se envía sin ubicación.
+// Se consulta una sola vez por sesión, también cuando falla, para no repetir el error en consola.
 const loadGeo = async () => {
   const session = storage("sessionStorage");
   const ctrl = new AbortController();
@@ -60,10 +61,11 @@ const loadGeo = async () => {
   try {
     const cached = session?.getItem("geo");
     if (cached) return (geo = JSON.parse(cached));
+    session?.setItem("geo", "{}");
     const res = await fetch(GEO_URL, { signal: ctrl.signal, credentials: "omit", referrerPolicy: "no-referrer" });
     if (!res.ok) return;
     const data = await res.json();
-    geo = { country: text(data.country_name), region: text(data.region), city: text(data.city) };
+    geo = { country: text(data.country), region: text(data.region), city: text(data.city) };
     session?.setItem("geo", JSON.stringify(geo));
   } catch {
   } finally {
