@@ -41,7 +41,7 @@ export const experience = [
     id: "exp-kalstein",
     title: "Kalstein France S.A.S.",
     role: {
-      es: "Desarrollador Full Stack y de Automatizaciones con IA",
+      es: "Desarrollador Full Stack y Automatizaciones con IA",
       en: "Full Stack & AI Automation Developer",
     },
     imgSrc: "./assets/images/kalstein-instruments.webp",
